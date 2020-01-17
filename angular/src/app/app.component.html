@@ -1,0 +1,19 @@
+<dx-form [formData]="employee" validationGroup="formGroup">
+  <dxi-item dataField="FirstName"></dxi-item>
+  <dxi-item dataField="LastName" [isRequired]="true" template="lastName"></dxi-item>
+  <dxi-item dataField="Photo" template="photo"></dxi-item>
+  <dxi-item itemType="button" horizontalAlignment="left"
+    [buttonOptions]="{ text: 'Validate', type: 'success', onClick: validateClick }"></dxi-item>
+
+  <div *dxTemplate="let data of 'lastName'">
+    <dx-text-box [(value)]="employee.LastName">
+      <dx-validator validationGroup="formGroup">
+        <dxi-validation-rule type="required" message="LastName is required"></dxi-validation-rule>
+      </dx-validator>
+    </dx-text-box>
+  </div>
+
+  <div *dxTemplate="let data of 'photo'">
+    <img id="formAvatar" [src]="employee.Photo"/>
+  </div>
+</dx-form>

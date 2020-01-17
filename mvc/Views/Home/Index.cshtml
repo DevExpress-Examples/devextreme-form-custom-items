@@ -1,0 +1,42 @@
+@using FormCustomItem
+@model Employee
+
+<style type="text/css">
+    #formAvatar {
+      height: 128px;
+      width: 128px;
+    }
+</style>
+
+<script type="text/javascript">
+    function valueChanged(e, component, dataField) {
+        component.updateData(dataField, e.value);
+    }
+
+    function validateClick(e) {
+        var validationResult = DevExpress.validationEngine.validateGroup("formGroup");
+
+        if (!validationResult.isValid)
+            alert("dxForm is invalid");
+    }
+</script>
+
+@(Html.DevExtreme().Form<Employee>()
+    .FormData(Model)
+    .ValidationGroup("formGroup")
+    .Items(items => {
+        items.AddSimpleFor(m => m.FirstName);
+        items.AddSimpleFor(m => m.LastName).Template(@<text>
+            @Html.DevExtreme().TextBoxFor(m => m.LastName).OnValueChanged("function(e) { valueChanged(e, component, dataField); }")
+        </text>);
+        items.AddSimpleFor(m => m.Photo).Template(@<text>
+            <img id="formAvatar" src="<%- component.option('formData')[dataField] %>" />
+        </text>);
+        items.AddButton()
+            .HorizontalAlignment(HorizontalAlignment.Left)
+            .ButtonOptions(b => b.Text("Validate")
+                .Type(ButtonType.Success)
+                .OnClick("validateClick")
+            );
+    })
+)
