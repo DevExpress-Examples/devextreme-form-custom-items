@@ -22,7 +22,7 @@
 <script>
 
 import { DxForm, DxItem } from 'devextreme-vue/form';
-import { DxTextBox } from 'devextreme-vue';
+import { DxTextBox } from 'devextreme-vue/text-box';
 import {
   DxValidator,
   DxRequiredRule,
@@ -46,7 +46,7 @@ export default {
     };
   },
   methods: {
-    validateClick(e) {
+    validateClick() {
       let validationResult = validationEngine.validateGroup("formGroup");
 
       if (!validationResult.isValid)
