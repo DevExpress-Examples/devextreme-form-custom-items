@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { DevExtremeModule } from 'devextreme-angular';
+import { DxFormModule } from 'devextreme-angular/ui/form';
+import { DxValidatorModule } from 'devextreme-angular/ui/validator';
+import { DxTextBoxModule } from 'devextreme-angular/ui/text-box';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { DevExtremeModule } from 'devextreme-angular';
   ],
   imports: [
     BrowserModule,
-    DevExtremeModule
+    DxFormModule,
+    DxValidatorModule,
+    DxTextBoxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
