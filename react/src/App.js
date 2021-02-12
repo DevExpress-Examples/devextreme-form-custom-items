@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import { Form, Item } from 'devextreme-react/form';
-import { TextBox } from 'devextreme-react';
+import { TextBox } from 'devextreme-react/text-box';
 import {
   Validator,
   RequiredRule,
