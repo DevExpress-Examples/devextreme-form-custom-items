@@ -20,18 +20,18 @@ This example illustrates how to use the [template](https://js.devexpress.com/Doc
 ## Files to Look At
 
 - **jQuery**
-    - [index.html](jQuery/index.html)    
+    - [index.html](jquery/index.html)    
 - **Angular**
-    - [app.component.html](Angular/src/app/app.component.html)
-    - [app.component.ts](Angular/src/app/app.component.ts)
+    - [app.component.html](angular/src/app/app.component.html)
+    - [app.component.ts](angular/src/app/app.component.ts)
 - **Angularjs**
     - [index.html](angularjs/index.html)   
 - **Vue**
-    - [App.vue](Vue/src/App.vue)
+    - [App.vue](vue/src/App.vue)
 - **React**
-    - [App.js](React/src/App.js)
+    - [App.js](react/src/App.js)
 - **Mvc**    
-    - [Index.cshtml](Form-Custom-items/mvc/Views/Home/Index.cshtml)
+    - [Index.cshtml](mvc/Form-Custom-items/mvc/Views/Home/Index.cshtml)
 
 ## Documentation
 
