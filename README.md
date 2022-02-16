@@ -12,8 +12,8 @@ This example illustrates how to use the [template](https://js.devexpress.com/Doc
 ## Implementation Details
 
 1. Implement a [template](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Item_Types/SimpleItem/#template) function for the "LastName" data field. In this template:
-  - Create a [dxTextBox](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxTextBox/) editor.
-  - Implement editor validation based on the synchronized [dxForm.validationGroup](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Configuration/#validationGroup) and [dxValidator.validationGroup](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Configuration/#validationGroup) settings.
+    - Create a [dxTextBox](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxTextBox/) editor.
+    - Implement editor validation based on the synchronized [dxForm.validationGroup](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Configuration/#validationGroup) and [dxValidator.validationGroup](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Configuration/#validationGroup) settings.
  
 2. Implement a [template](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Item_Types/SimpleItem/#template) function with a static image for the "Photo" data field. 
  
