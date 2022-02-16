@@ -3,7 +3,7 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T853162)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# dxForm - How to customize form items
+# Form - How to customize form items
 
 This example illustrates how to use the [template](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Item_Types/SimpleItem/#template) property to customize form items.
 
@@ -12,8 +12,8 @@ This example illustrates how to use the [template](https://js.devexpress.com/Doc
 ## Implementation Details
 
 1. Implement a [template](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Item_Types/SimpleItem/#template) function for the "LastName" data field. In this template:
-    - Create a [dxTextBox](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxTextBox/) editor.
-    - Implement editor validation based on the synchronized [dxForm.validationGroup](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Configuration/#validationGroup) and [dxValidator.validationGroup](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Configuration/#validationGroup) settings.
+    - Create a [TextBox](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxTextBox/) editor.
+    - Implement editor validation based on the synchronized [Form.validationGroup](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Configuration/#validationGroup) and [Validator.validationGroup](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Configuration/#validationGroup) settings.
  
 2. Implement a [template](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Item_Types/SimpleItem/#template) function with a static image for the "Photo" data field. 
  
@@ -42,4 +42,4 @@ This example illustrates how to use the [template](https://js.devexpress.com/Doc
 
 ## More Examples
 
-- [DataGrid - How to implement a custom editing form using dxForm and dxPopup](https://github.com/DevExpress-Examples/DataGrid-How-to-implement-a-custom-editing-form-using-dxForm-and-dxPopup)
+- [DataGrid - How to implement a custom editing form using Form and Popup](https://github.com/DevExpress-Examples/DataGrid-How-to-implement-a-custom-editing-form-using-dxForm-and-dxPopup)
