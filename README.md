@@ -31,7 +31,7 @@ This example illustrates how to use the [template](https://js.devexpress.com/Doc
 - **React**
     - [App.js](react/src/App.js)
 - **Mvc**    
-    - [Index.cshtml](mvc/Form-Custom-items/mvc/Views/Home/Index.cshtml)
+    - [Index.cshtml](mvc/Views/Home/Index.cshtml)
 
 ## Documentation
 
