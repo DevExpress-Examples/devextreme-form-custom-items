@@ -17,7 +17,7 @@ This example illustrates how to use the [template](https://js.devexpress.com/Doc
  
 2. Implement a [template](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Item_Types/SimpleItem/#template) function with a static image for the "Photo" data field. 
  
-## Files to Look At
+## Files to Review
 
 - **jQuery**
     - [index.html](jquery/index.html)    
