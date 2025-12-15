@@ -8,7 +8,7 @@
 
 This example illustrates how to use the [template](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Item_Types/SimpleItem/#template) property to customize form items.
 
-![form](form-custom-items.png)
+![form](images/form-custom-items.png)
 
 ## Implementation Details
 
@@ -21,16 +21,16 @@ This example illustrates how to use the [template](https://js.devexpress.com/Doc
 ## Files to Review
 
 - **jQuery**
-    - [index.html](jquery/index.html)    
+    - [index.html](jQuery/index.html)    
 - **Angular**
-    - [app.component.html](angular/src/app/app.component.html)
-    - [app.component.ts](angular/src/app/app.component.ts)
-- **Angularjs**
-    - [index.html](angularjs/index.html)   
+    - [app.component.html](Angular/src/app/app.component.html)
+    - [app.component.ts](Angular/src/app/app.component.ts)
+- **AngularJS**
+    - [index.html](AngularJS/index.html)   
 - **Vue**
-    - [App.vue](vue/src/App.vue)
+    - [App.vue](Vue/src/App.vue)
 - **React**
-    - [App.js](react/src/App.js)
+    - [App.js](React/src/App.js)
 - **Mvc**    
     - [Index.cshtml](mvc/Views/Home/Index.cshtml)
 
