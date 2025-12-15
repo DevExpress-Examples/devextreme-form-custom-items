@@ -1,17 +1,27 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using ASP_NET_Core.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASP_NET_Core.Controllers;
-public class HomeController: Controller {
-    public IActionResult Index() {
-        return View();
+
+public class HomeController : Controller
+{
+    public IActionResult Index()
+    {
+        var model = new Employee
+        {
+            ID = 1,
+            FirstName = "Peter",
+            LastName = "Smith",
+            Photo = "https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/petersmith.png",
+        };
+
+        return View(model);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error() {
+    public IActionResult Error()
+    {
         return View();
     }
 }
+

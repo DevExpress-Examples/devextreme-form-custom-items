@@ -1,29 +1,57 @@
 @using ASP_NET_Core.Models
+@model Employee
 
-<h2>Home</h2>
+<style type="text/css">
+    #form-avatar {
+        height: 128px;
+        width: 128px;
+    }
+</style>
 
-@(Html.DevExtreme().DataGrid<SampleOrder>()
-    .ShowBorders(true)
-    .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
-    .Columns(columns => {
-        columns.AddFor(m => m.OrderID);
-        columns.AddFor(m => m.OrderDate);
-        columns.AddFor(m => m.CustomerName);
-        columns.AddFor(m => m.ShipCountry);
-        columns.AddFor(m => m.ShipCity);
+<script type="text/javascript">
+    function valueChanged(e, component, dataField) {
+        component.updateData(dataField, e.value);
+    }
+
+    function validateClick() {
+        const validationResult = DevExpress.validationEngine.validateGroup('formGroup');
+
+        if (!validationResult.isValid) {
+            DevExpress.ui.notify('dxForm is invalid', 'error', 2000);
+        }
+    }
+</script>
+
+@using (Html.DevExtreme().ValidationGroup("formGroup"))
+{
+
+    @(Html.DevExtreme().Form<Employee>()
+    .FormData(Modeål)
+    .ValidationGroup("formGroup")
+    .Items(items =>
+    {
+    items.AddSimpleFor(m => m.FirstName);
+    items.AddSimpleFor(m => m.LastName)
+    .IsRequired(true)
+    .Template(@<text>
+        <div>
+            @(Html.DevExtreme().TextBoxFor(m => m.LastName)
+                    .OnValueChanged("function(e) { valueChanged(e, component, dataField); }")
+                    )
+        </div>
+    </text>);
+    items.AddSimpleFor(m => m.Photo)
+    .Template(@<text>
+        <img id="form-avatar" src="<%- component.option('formData')[dataField] %>" alt="employee" />
+    </text>);
+    items.AddButton()
+        .HorizontalAlignment(HorizontalAlignment.Left)
+        .ButtonOptions(b => b
+            .Text("Validate")
+            .Type(ButtonType.Success)
+            .OnClick("validateClick")
+        );
     })
-    .Paging(p => p.PageSize(10))
-    .FilterRow(f => f.Visible(true))
-    .HeaderFilter(f => f.Visible(true))
-    .GroupPanel(p => p.Visible(true))
-    .Grouping(g => g.AutoExpandAll(false))
-    .RemoteOperations(true)
-    .Summary(s => s
-        .TotalItems(totalItems => {
-            totalItems.AddFor(m => m.ShipCity).SummaryType(SummaryType.Count);
-        })
-        .GroupItems(groupItems => {
-            groupItems.Add().SummaryType(SummaryType.Count);
-        })
-    )
 )
+
+}
