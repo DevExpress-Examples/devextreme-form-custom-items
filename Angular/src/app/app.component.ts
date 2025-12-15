@@ -1,20 +1,28 @@
 import { Component } from '@angular/core';
-import { ClickEvent } from 'devextreme/ui/button';
+
+import validationEngine from 'devextreme/ui/validation_engine';
+import notify from 'devextreme/ui/notify';
+
+import { Service, type Employee } from './app.service';
 
 @Component({
   selector: 'app-root',
+  providers: [Service],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Angular';
+  employee: Employee;
 
-  counter = 0;
+  constructor(service: Service) {
+    this.employee = service.getEmployee();
+  }
 
-  buttonText = 'Click count: 0';
+  validateClick(): void {
+    const validationResult = validationEngine.validateGroup('formGroup');
 
-  onClick(e: ClickEvent): void {
-    this.counter++;
-    this.buttonText = `Click count: ${this.counter}`;
+    if (!validationResult.isValid) {
+      notify('dxForm is invalid', 'error', 2000);
+    }
   }
 }

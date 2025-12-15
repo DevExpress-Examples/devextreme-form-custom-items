@@ -1,3 +1,33 @@
-<div class="default-style">
-  <dx-button [text]="buttonText" (onClick)="onClick($event)"></dx-button>
-</div>
+<dx-form [formData]="employee" validationGroup="formGroup">
+  <dxi-form-item dataField="FirstName"></dxi-form-item>
+  <dxi-form-item
+    dataField="LastName"
+    [isRequired]="true"
+    template="lastName"
+  ></dxi-form-item>
+  <dxi-form-item dataField="Photo" template="photo"></dxi-form-item>
+  <dxi-form-item
+    itemType="button"
+    horizontalAlignment="left"
+    [buttonOptions]="{
+      text: 'Validate',
+      type: 'success',
+      onClick: validateClick
+    }"
+  ></dxi-form-item>
+
+  <div *dxTemplate="let data of 'lastName'">
+    <dx-text-box [(value)]="employee.LastName">
+      <dx-validator validationGroup="formGroup">
+        <dxi-validation-rule
+          type="required"
+          message="LastName is required"
+        ></dxi-validation-rule>
+      </dx-validator>
+    </dx-text-box>
+  </div>
+
+  <div *dxTemplate="let data of 'photo'">
+    <img id="form-avatar" [src]="employee.Photo" alt="employee" />
+  </div>
+</dx-form>
