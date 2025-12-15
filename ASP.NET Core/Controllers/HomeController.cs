@@ -12,7 +12,7 @@ public class HomeController : Controller
             ID = 1,
             FirstName = "Peter",
             LastName = "Smith",
-            Photo = "https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/petersmith.png",
+            Photo = "/images/petersmith.png",
         };
 
         return View(model);
