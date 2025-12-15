@@ -305,7 +305,7 @@ TesterMetadata.xml
 *.bak
 
 */wwwroot/*
-!*/wwwroot/images/petersmith.png
+!*/ASP.NET-Core/wwwroot/images/petersmith.png
 !*/wwwroot/css/Site.css
 
 *.DS_Store
