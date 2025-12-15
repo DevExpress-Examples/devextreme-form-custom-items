@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Sample</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.5/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.5/css/dx.light.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/19.2.5/js/dx.all.js"></script>
+
+    <style type="text/css">
+        #formAvatar {
+            height: 128px;
+            width: 128px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var DemoApp = angular.module('DemoApp', ['dx']);
+
+        DemoApp.controller('DemoController', function DemoController($scope) {
+            $scope.employee = {
+                ID: 1,
+                FirstName: "Peter",
+                LastName: "Smith",
+                Photo: "images/petersmith.png"
+            };
+            
+            $scope.formOptions = {
+                validationGroup: "formGroup",
+                formData: $scope.employee,
+                items: [{
+                    dataField: "FirstName"
+                }, {
+                    dataField: "LastName",
+                    isRequired: true,
+                    template: "lastNameTemplate"
+                }, {
+                    dataField: "Photo",
+                    template: "photoTemplate"
+                }, {
+                    itemType: "button",
+                    horizontalAlignment: "left",
+                    buttonOptions: {
+                        text: "Validate",
+                        type: "success",
+                        onClick: function (e) {
+                            var validationResult = DevExpress.validationEngine.validateGroup("formGroup");
+
+                            if (!validationResult.isValid)
+                                alert("dxForm is invalid");
+                        }
+                    }
+                }]
+            };
+
+            $scope.textBoxOptions = function (data) {
+                return {
+                    value: $scope.employee.LastName,
+                    onValueChanged: function (e) {
+                        data.component.updateData(data.dataField, e.value);
+                    }
+                };
+            };
+
+            $scope.lastNameValidationRules = {
+                validationGroup: "formGroup",
+                validationRules: [{
+                    type: "required",
+                    message: "LastName is required"
+                }]
+            };
+        });
+    </script>
+</head>
+<body>
+    <div ng-app="DemoApp" ng-controller="DemoController">
+        <div id="frm" dx-form="formOptions" dx-item-alias="data">
+            <div data-options="dxTemplate: {name: 'lastNameTemplate'}">
+                <div dx-text-box="textBoxOptions(data)" dx-validator="lastNameValidationRules"></div>
+        	</div>
+            <div data-options="dxTemplate: {name: 'photoTemplate'}">
+                <img id="formAvatar" src="{{employee.Photo}}"/>
+        	</div>
+        </div>
+    </div>
+</body>
+</html>

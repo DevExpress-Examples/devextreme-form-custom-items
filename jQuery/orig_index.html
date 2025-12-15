@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Sample</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.5/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.5/css/dx.light.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/19.2.5/js/dx.all.js"></script>
+
+    <style type="text/css">
+        #formAvatar {
+            height: 128px;
+            width: 128px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var employee = {
+                ID: 1,
+                FirstName: "Peter",
+                LastName: "Smith",
+                Photo: "images/petersmith.png"
+            };
+
+            $("#form").dxForm({
+                validationGroup: "formGroup",
+                formData: employee,
+                items: [{
+                    dataField: "FirstName"
+                }, {
+                    dataField: "LastName",
+                    isRequired: true,
+                    template: function (data, itemElement) {
+                        $("<div>").dxTextBox({
+                            value: employee.LastName,
+                            onValueChanged: function (e) {
+                                data.component.updateData(data.dataField, e.value);
+                            }
+                        }).dxValidator({
+                            validationGroup: "formGroup",
+                            validationRules: [{
+                                type: "required",
+                                message: "LastName is required"
+                            }]
+                        }).appendTo(itemElement);
+                    }
+                }, {
+                    dataField: "Photo",
+                    template: function (data, itemElement) {
+                        $("<img>").attr({
+                            id: "formAvatar",
+                            src: employee.Photo
+                        }).appendTo(itemElement);
+                    }
+                }, {
+                    itemType: "button",
+                    horizontalAlignment: "left",
+                    buttonOptions: {
+                        text: "Validate",
+                        type: "success",
+                        onClick: function (e) {
+                            var validationResult = DevExpress.validationEngine.validateGroup("formGroup");
+
+                            if (!validationResult.isValid)
+                                alert("dxForm is invalid");
+                        }
+                    }
+                }]
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="form"></div>
+</body>
+</html>
