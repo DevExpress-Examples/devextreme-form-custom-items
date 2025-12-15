@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { DxButtonModule } from 'devextreme-angular/ui/button';
+import { DxFormModule } from 'devextreme-angular/ui/form';
+import { DxTextBoxModule } from 'devextreme-angular/ui/text-box';
+import { DxValidatorModule } from 'devextreme-angular/ui/validator';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -11,7 +13,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DxButtonModule,
+    DxFormModule,
+    DxTextBoxModule,
+    DxValidatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

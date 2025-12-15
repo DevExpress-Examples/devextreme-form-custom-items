@@ -305,6 +305,8 @@ TesterMetadata.xml
 *.bak
 
 */wwwroot/*
-
 !*/wwwroot/css/Site.css
+!*/wwwroot/images/
+!*/wwwroot/images/petersmith.png
+
 *.DS_Store

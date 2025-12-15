@@ -1,5 +1,4 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/234532451/25.1.3%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T853162)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
@@ -21,18 +20,17 @@ This example illustrates how to use the [template](https://js.devexpress.com/Doc
 ## Files to Review
 
 - **jQuery**
-    - [index.html](jQuery/index.html)    
+    - [index.html](jQuery/src/index.html)
+    - [index.js](jQuery/src/index.js)     
 - **Angular**
     - [app.component.html](Angular/src/app/app.component.html)
     - [app.component.ts](Angular/src/app/app.component.ts)
-- **AngularJS**
-    - [index.html](AngularJS/index.html)   
 - **Vue**
-    - [App.vue](Vue/src/App.vue)
+    - [Home.vue](Vue/src/components/HomeContent.vue)
 - **React**
-    - [App.js](React/src/App.js)
-- **Mvc**    
-    - [Index.cshtml](mvc/Views/Home/Index.cshtml)
+    - [App.tsx](React/src/App.tsx)
+- **ASP.NET Core**    
+    - [Index.cshtml](ASP.NET%20Core/Views/Home/Index.cshtml)
 
 ## Documentation
 
