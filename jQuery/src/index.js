@@ -58,7 +58,6 @@ $(() => {
             const validationResult = DevExpress.validationEngine.validateGroup('formGroup');
 
             if (!validationResult.isValid) {
-              // eslint-disable-next-line no-alert
               DevExpress.ui.notify('dxForm is invalid', 'error', 2000);
             }
           },
