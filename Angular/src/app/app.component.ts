@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import validationEngine from 'devextreme/ui/validation_engine';
 import notify from 'devextreme/ui/notify';
@@ -13,6 +13,7 @@ import { DxValidatorModule } from 'devextreme-angular/ui/validator';
   selector: 'app-root',
   providers: [Service],
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
